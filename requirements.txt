@@ -1,0 +1,7 @@
+python-dotenv # entorno para cargar variables de entorno
+pandas # Para manipulación de datos
+numpy # Para manipulación de datos
+matplotlib # Para gráficos
+tensorflow  # Si decides utilizar redes neuronales
+tensorboardX # Para visualizar los resultados de TensorFlow
+pyyaml # libreria para guardar configuraciones

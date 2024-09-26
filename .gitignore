@@ -1,0 +1,39 @@
+# Ignorar archivos relacionados con entornos virtuales de Python
+venv/
+*.pyc
+__pycache__/
+
+# Ignorar yalsm
+configs/config.yaml
+
+# Ignorar archivos generados por Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Ignorar archivos de logs, pero mantener la carpeta de logs
+Resources/logs/*
+!Resources/logs/.gitkeep
+
+# Ignorar modelos entrenados, pero mantener la carpeta
+Resources/trainedModels/*
+!Resources/trainedModels/.gitkeep
+
+# Ignorar los encoders serializados, pero mantener la carpeta
+#Resources/encoders/*
+#!Resources/encoders/.gitkeep
+
+# Ignorar archivos sensibles o de entorno
+.env
+
+# Ignorar cualquier archivo temporal o de backups
+*.tmp
+*.bak
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Ignorar archivos de configuración de Docker que puedan ser generados automáticamente
+docker-compose.override.yml
