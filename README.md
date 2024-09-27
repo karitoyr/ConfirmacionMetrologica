@@ -12,6 +12,7 @@ This project aims to implement and manage a system for **metrological confirmati
 - [Usage](#usage)
   - [Scripts](#scripts)
   - [GitFlow Process](#gitflow-process)
+  - [Start Coding](#start-coding)
 - [Configuration](#configuration)
 - [Best Practices](#best-practices)
 - [License](#license)
@@ -87,6 +88,17 @@ We follow **GitFlow** for version control and branch management. Here's a typica
     ```bash
     # but have in mind that git flow automatically creates a pull request when you finish a feature, release or hotfix
     git request-pull master develop
+    ```
+
+## Start Coding
+
+1 - **Use the controllers notebooks in the `model/controllers/notbooks/` folder**:
+    follow the pipeline pattern and execute the functions in the order they are presented. 
+2 - **Use the scripts  `model/controllers/scripts/` folder**:
+    execute in the terminal the scripts available in the folder to automate the process.
+
+    ```bash
+    python script.py
     ```
 
 ## Configuration
