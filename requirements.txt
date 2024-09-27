@@ -6,3 +6,6 @@ tensorboardX # Para visualizar los resultados de TensorFlow
 pyyaml # libreria para guardar configuraciones
 joblib # para guardar modelos de IA
 ipykernel # para trabajar con jupyter notebooks
+scipy # para trabajar con datos
+scikit-learn # modelos de IA 
+seaborn # para gráficos

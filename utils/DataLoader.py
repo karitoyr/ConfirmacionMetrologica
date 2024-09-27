@@ -59,19 +59,19 @@ class DataLoader:
         return input_data
 
     @staticmethod
-    def save_array_to_txt( array, filenamePath):
+    def save_array_to_txt( array, filename_path):
         """
         Save a given array to a text file in CSV format.
 
         Parameters:
         array (array-like): The array to be saved. It can be a list or a numpy array.
-        filenamePath (str): The name of the file to save the array to.
+        filename_path (str): The name of the file to save the array to.
 
         Returns:
         None
         """
         # Construct the full path for the output file
-        path = filenamePath
+        path = filename_path
         
         # Ensure the input is a numpy array
         if not isinstance(array, np.ndarray):
@@ -81,19 +81,19 @@ class DataLoader:
         np.savetxt(path, array, delimiter=',', fmt='%s', newline='\n')
 
     @staticmethod
-    def load_data_csv(filenamePath, encoding='latin1', delimiter=';'):
+    def load_data_csv(filename_path, encoding='latin1', delimiter=';'):
         """
         Load data from a CSV file and attempt to convert columns to numeric types.
 
         Parameters:
-        filenamePath (str): The name of the CSV file to be loaded.
+        filename_path (str): The name of the CSV file to be loaded.
         encoding (str, optional): The encoding of the CSV file. Default is 'latin1'.
         delimiter (str, optional): The delimiter used in the CSV file. Default is ';'.
 
         Returns:
         pd.DataFrame: The loaded data as a pandas DataFrame. If there is a parsing error, returns None.
         """
-        path = f"{filenamePath}"
+        path = f"{filename_path}"
         try:
             data = pd.read_csv(path, encoding=encoding, delimiter=delimiter, header=0, quoting=csv.QUOTE_NONE, decimal=',')
             for column in data.columns:
@@ -107,37 +107,53 @@ class DataLoader:
         return data
 
     @staticmethod
-    def load_data_txt_to_array( filenamePath, delimiter='\n', encoding='utf-8'):
+    def save_data_to_csv(data: pd.DataFrame, filename_path: str, encoding='utf-8', index=False):
+        """
+        Save a pandas DataFrame to a CSV file.
+
+        Parameters:
+        data (pd.DataFrame): The DataFrame to be saved.
+        filename_path (str): The path (including filename) where the CSV will be saved.
+        encoding (str, optional): The encoding of the CSV file. Default is 'utf-8'.
+        index (bool, optional): Whether to write row names (index). Default is False.
+
+        Returns:
+        None
+        """
+        data.to_csv(filename_path, encoding=encoding, index=index, quoting=csv.QUOTE_NONE, sep=',')
+
+    @staticmethod
+    def load_data_txt_to_array( filename_path, delimiter='\n', encoding='utf-8'):
         """
         Load data from a text file and return it as a NumPy array of strings.
 
         Parameters:
         folder_name (str): The name of the folder containing the file.
-        filenamePath (str): The name of the text file to be loaded.
+        filename_path (str): The name of the text file to be loaded.
         delimiter (str, optional): The delimiter used to separate values in the text file. Default is '\n'.
         encoding (str, optional): The encoding of the text file. Default is 'utf-8'.
 
         Returns:
         np.ndarray: A NumPy array containing the data from the text file.
         """
-        path = f"{filenamePath}"
+        path = f"{filename_path}"
         return np.genfromtxt(path, delimiter=delimiter, dtype=str, encoding=encoding)
     
     @staticmethod
-    def save_data_pickle( data, filenamePath, filter_condition=None):
+    def save_data_pickle( data, filename_path, filter_condition=None):
         """
         Save data to a pickle file, optionally filtering it based on a condition.
 
         Parameters:
         data (DataFrame): The data to be saved.
-        filenamePath (str): The name of the file to save the data in.
+        filename_path (str): The name of the file to save the data in.
         filter_condition (str, optional): A condition to filter the data before saving. Defaults to None.
 
         Returns:
         None
         """
         # Construct the full path for the output file
-        path = f"{filenamePath}"
+        path = f"{filename_path}"
         
         # If a filter condition is provided, filter the data
         if filter_condition:
@@ -154,37 +170,37 @@ class DataLoader:
 
         
     @staticmethod
-    def save_model( filenamePath, model):
+    def save_model( filename_path, model):
         """
         Save a machine learning model to a file with a timestamped filename.
 
         Parameters:
         model (object): The machine learning model to be saved.
-        filenamePath (str): The base name for the model file.
+        filename_path (str): The base name for the model file.
 
         Returns:
         str: The name of the saved model file.
         """
         # Get the current date and time as a string formatted as 'YYYY-MM-DD_HH-MM-SS'
         date_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        full_filename = f"{filenamePath}#{date_str}.pkl"
+        full_filename = f"{filename_path}#{date_str}.pkl"
         joblib.dump(model, full_filename)
         
         # Return the name of the saved model file
         return full_filename
     
     @staticmethod
-    def load_model(filenamePath):
+    def load_model(filename_path):
         """
         Load a machine learning model from a specified file.
 
         Parameters:
-        filenamePath (str): The name of the model file to be loaded.
+        filename_path (str): The name of the model file to be loaded.
 
         Returns:
         object: The loaded machine learning model.
         """
-        return joblib.load(filenamePath)
+        return joblib.load(filename_path)
     
     @staticmethod
     def get_last_trained_model_name(base_path):

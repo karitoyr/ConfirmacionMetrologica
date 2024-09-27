@@ -39,5 +39,5 @@ Thumbs.db
 docker-compose.override.yml
 .venv/
 
-docs/*
-!docs/.gitkeep
+
+docs/comands.txt

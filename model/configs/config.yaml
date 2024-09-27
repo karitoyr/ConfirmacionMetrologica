@@ -1,6 +1,8 @@
 output_paths:
   save_model_path: "{base_path}/resources/models/model.pkl"  # Ruta para guardar el modelo entrenado
   save_encoder_path: "{base_path}/Resources/encoders/encoder.pkl"  # Ruta para guardar los codificadores
+  proccessed_original_data_path : "{base_path}/data/processed/processed_original_data.csv"  # Ruta para guardar los datos procesados
+
 
 input_paths:
   raw_data_path: "{base_path}/data/raw/DatosBajoCosto.csv"  # Ruta de los datos crudos
