@@ -37,5 +37,7 @@ Thumbs.db
 
 # Ignorar archivos de configuración de Docker que puedan ser generados automáticamente
 docker-compose.override.yml
-Docs/
 .venv/
+
+docs/*
+!docs/.gitkeep

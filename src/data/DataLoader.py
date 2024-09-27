@@ -207,16 +207,3 @@ class DataLoader:
         model_files.sort(key=lambda x: datetime.datetime.strptime(x.split('#')[-1].replace('.pkl', ''), "%Y-%m-%d_%H-%M-%S"), reverse=True)
         return os.path.join(base_path, model_files[0])
     
-    
-    @staticmethod
-    def remove_non_ascii(text):
-        """
-        Remove non-ASCII characters from a given text string.
-
-        Parameters:
-        text (str): The input string from which non-ASCII characters need to be removed.
-
-        Returns:
-        str: A new string with all non-ASCII characters removed.
-        """
-        return re.sub(r'[^\x00-\x7F]+', '', text)

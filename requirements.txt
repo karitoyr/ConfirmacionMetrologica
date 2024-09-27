@@ -5,4 +5,4 @@ matplotlib # Para gráficos
 tensorflow  # Si decides utilizar redes neuronales
 tensorboardX # Para visualizar los resultados de TensorFlow
 pyyaml # libreria para guardar configuraciones
-joblib# para guardar modelos de IA
+joblib # para guardar modelos de IA
