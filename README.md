@@ -37,15 +37,11 @@ Follow these steps to set up the project on your local machine.
 
 2. **Set up the virtual environment and install dependencies**:
    ```bash
-   .\scripts.bat Create-Venv
+   .\scripts.bat startPoryect
    ```
 
 3. **Set up the `.env` file**:
-   Copy the `.env.example` file to `.env`  and `config.example.yaml` to `config.yaml` then modify the settings as needed:
-   ```bash
-   cp .env.example .env
-   cp configs/config.example.yaml configs/config.yaml
-   ```
+   automatically created by the scripts.bat file you can modify it if you need to.
 
 ## Usage
 
